@@ -16,6 +16,8 @@
 		0ED8AC361A1BFB7B007E5286 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0ED8AC341A1BFB7B007E5286 /* LaunchScreen.xib */; };
 		0ED8AC421A1BFB7B007E5286 /* TodoListTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 0ED8AC411A1BFB7B007E5286 /* TodoListTests.m */; };
 		0ED8AC501A1C0433007E5286 /* FirstViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0ED8AC4F1A1C0433007E5286 /* FirstViewController.xib */; };
+		0ED8AC541A1C0D9C007E5286 /* CreateTaskViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0ED8AC521A1C0D9C007E5286 /* CreateTaskViewController.m */; };
+		0ED8AC551A1C0D9C007E5286 /* CreateTaskViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0ED8AC531A1C0D9C007E5286 /* CreateTaskViewController.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -45,6 +47,9 @@
 		0ED8AC401A1BFB7B007E5286 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		0ED8AC411A1BFB7B007E5286 /* TodoListTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TodoListTests.m; sourceTree = "<group>"; };
 		0ED8AC4F1A1C0433007E5286 /* FirstViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = FirstViewController.xib; sourceTree = "<group>"; };
+		0ED8AC511A1C0D9C007E5286 /* CreateTaskViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CreateTaskViewController.h; sourceTree = "<group>"; };
+		0ED8AC521A1C0D9C007E5286 /* CreateTaskViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CreateTaskViewController.m; sourceTree = "<group>"; };
+		0ED8AC531A1C0D9C007E5286 /* CreateTaskViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CreateTaskViewController.xib; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -97,6 +102,9 @@
 				0ED8AC321A1BFB7B007E5286 /* Images.xcassets */,
 				0ED8AC341A1BFB7B007E5286 /* LaunchScreen.xib */,
 				0ED8AC221A1BFB7B007E5286 /* Supporting Files */,
+				0ED8AC511A1C0D9C007E5286 /* CreateTaskViewController.h */,
+				0ED8AC521A1C0D9C007E5286 /* CreateTaskViewController.m */,
+				0ED8AC531A1C0D9C007E5286 /* CreateTaskViewController.xib */,
 			);
 			path = TodoList;
 			sourceTree = "<group>";
@@ -210,6 +218,7 @@
 				0ED8AC311A1BFB7B007E5286 /* Main.storyboard in Resources */,
 				0ED8AC361A1BFB7B007E5286 /* LaunchScreen.xib in Resources */,
 				0ED8AC331A1BFB7B007E5286 /* Images.xcassets in Resources */,
+				0ED8AC551A1C0D9C007E5286 /* CreateTaskViewController.xib in Resources */,
 				0ED8AC501A1C0433007E5286 /* FirstViewController.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -230,6 +239,7 @@
 			files = (
 				0ED8AC2E1A1BFB7B007E5286 /* SecondViewController.m in Sources */,
 				0ED8AC281A1BFB7B007E5286 /* AppDelegate.m in Sources */,
+				0ED8AC541A1C0D9C007E5286 /* CreateTaskViewController.m in Sources */,
 				0ED8AC2B1A1BFB7B007E5286 /* FirstViewController.m in Sources */,
 				0ED8AC251A1BFB7B007E5286 /* main.m in Sources */,
 			);

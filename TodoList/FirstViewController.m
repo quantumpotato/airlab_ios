@@ -22,10 +22,18 @@
     self.view.backgroundColor = [UIColor whiteColor];
     self.title = @"Tasks";
     self.tasks = [NSMutableArray array];
-    for (int i = 0; i < 20; i++) {
-        NSString *newTask = [NSString stringWithFormat:@"Task #%d", i + 1];
-        [self.tasks addObject:newTask];
-    }
+    
+    UIBarButtonItem *newTaskButton = [[UIBarButtonItem alloc] initWithTitle:@"+"
+                                                                      style:UIBarButtonItemStyleDone target:self
+                                                                     action:@selector(newTapped)];
+    
+    self.navigationItem.rightBarButtonItem = newTaskButton;
+}
+
+- (void)newTapped {
+    CreateTaskViewController *vc = [[CreateTaskViewController alloc] init];
+    vc.delegate = self;
+    [self.navigationController pushViewController:vc animated:true];
 }
 
 #pragma mark UITableView
@@ -49,6 +57,23 @@
     
     return cell;
 }
+
+#pragma mark CreateTaskDelegate
+
+- (void)createdTask:(NSString *)task {
+    [self.tasks addObject:task];
+    [self.navigationController popViewControllerAnimated:true];
+}
+
+
+
+
+
+
+
+
+
+
 
 
 
