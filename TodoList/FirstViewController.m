@@ -8,20 +8,48 @@
 
 #import "FirstViewController.h"
 
-@interface FirstViewController ()
-
-@end
-
 @implementation FirstViewController
+
+#pragma mark View Cycle
+
+- (id)init {
+    self = [self initWithNibName:@"FirstViewController" bundle:nil];
+    return self;
+}
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    // Do any additional setup after loading the view, typically from a nib.
+    self.view.backgroundColor = [UIColor whiteColor];
+    self.title = @"Tasks";
+    self.tasks = [NSMutableArray array];
+    for (int i = 0; i < 20; i++) {
+        NSString *newTask = [NSString stringWithFormat:@"Task #%d", i + 1];
+        [self.tasks addObject:newTask];
+    }
 }
 
-- (void)didReceiveMemoryWarning {
-    [super didReceiveMemoryWarning];
-    // Dispose of any resources that can be recreated.
+#pragma mark UITableView
+
+- (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
+    return self.tasks.count;
 }
+
+- (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
+    
+    static NSString *cellIdentifier = @"taskCell";
+    
+    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:cellIdentifier];
+    
+    if (cell == nil) {
+        cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:cellIdentifier];
+    }
+
+    NSString *task = self.tasks[indexPath.row];
+    cell.textLabel.text = task;
+    
+    return cell;
+}
+
+
 
 @end

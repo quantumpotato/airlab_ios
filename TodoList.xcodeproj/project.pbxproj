@@ -15,6 +15,7 @@
 		0ED8AC331A1BFB7B007E5286 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 0ED8AC321A1BFB7B007E5286 /* Images.xcassets */; };
 		0ED8AC361A1BFB7B007E5286 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0ED8AC341A1BFB7B007E5286 /* LaunchScreen.xib */; };
 		0ED8AC421A1BFB7B007E5286 /* TodoListTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 0ED8AC411A1BFB7B007E5286 /* TodoListTests.m */; };
+		0ED8AC501A1C0433007E5286 /* FirstViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0ED8AC4F1A1C0433007E5286 /* FirstViewController.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -43,6 +44,7 @@
 		0ED8AC3B1A1BFB7B007E5286 /* TodoListTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = TodoListTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		0ED8AC401A1BFB7B007E5286 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		0ED8AC411A1BFB7B007E5286 /* TodoListTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TodoListTests.m; sourceTree = "<group>"; };
+		0ED8AC4F1A1C0433007E5286 /* FirstViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = FirstViewController.xib; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -86,6 +88,7 @@
 			children = (
 				0ED8AC261A1BFB7B007E5286 /* AppDelegate.h */,
 				0ED8AC271A1BFB7B007E5286 /* AppDelegate.m */,
+				0ED8AC4F1A1C0433007E5286 /* FirstViewController.xib */,
 				0ED8AC291A1BFB7B007E5286 /* FirstViewController.h */,
 				0ED8AC2A1A1BFB7B007E5286 /* FirstViewController.m */,
 				0ED8AC2C1A1BFB7B007E5286 /* SecondViewController.h */,
@@ -207,6 +210,7 @@
 				0ED8AC311A1BFB7B007E5286 /* Main.storyboard in Resources */,
 				0ED8AC361A1BFB7B007E5286 /* LaunchScreen.xib in Resources */,
 				0ED8AC331A1BFB7B007E5286 /* Images.xcassets in Resources */,
+				0ED8AC501A1C0433007E5286 /* FirstViewController.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -307,7 +311,7 @@
 				MTL_ENABLE_DEBUG_INFO = YES;
 				ONLY_ACTIVE_ARCH = YES;
 				SDKROOT = iphoneos;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Debug;
 		};
@@ -342,7 +346,7 @@
 				IPHONEOS_DEPLOYMENT_TARGET = 8.1;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				SDKROOT = iphoneos;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 				VALIDATE_PRODUCT = YES;
 			};
 			name = Release;
@@ -354,6 +358,7 @@
 				INFOPLIST_FILE = TodoList/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Debug;
 		};
@@ -364,6 +369,7 @@
 				INFOPLIST_FILE = TodoList/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Release;
 		};
