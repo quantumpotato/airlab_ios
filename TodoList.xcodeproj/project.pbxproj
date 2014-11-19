@@ -19,6 +19,7 @@
 		0ED8AC541A1C0D9C007E5286 /* CreateTaskViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0ED8AC521A1C0D9C007E5286 /* CreateTaskViewController.m */; };
 		0ED8AC551A1C0D9C007E5286 /* CreateTaskViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0ED8AC531A1C0D9C007E5286 /* CreateTaskViewController.xib */; };
 		0ED8AC581A1C164B007E5286 /* AIRFileHelpers.m in Sources */ = {isa = PBXBuildFile; fileRef = 0ED8AC571A1C164B007E5286 /* AIRFileHelpers.m */; };
+		0ED8AC5C1A1C1FB2007E5286 /* EditTaskViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0ED8AC5B1A1C1FB2007E5286 /* EditTaskViewController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -53,6 +54,8 @@
 		0ED8AC531A1C0D9C007E5286 /* CreateTaskViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CreateTaskViewController.xib; sourceTree = "<group>"; };
 		0ED8AC561A1C164B007E5286 /* AIRFileHelpers.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AIRFileHelpers.h; sourceTree = "<group>"; };
 		0ED8AC571A1C164B007E5286 /* AIRFileHelpers.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AIRFileHelpers.m; sourceTree = "<group>"; };
+		0ED8AC5A1A1C1FB2007E5286 /* EditTaskViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EditTaskViewController.h; sourceTree = "<group>"; };
+		0ED8AC5B1A1C1FB2007E5286 /* EditTaskViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EditTaskViewController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -109,6 +112,8 @@
 				0ED8AC511A1C0D9C007E5286 /* CreateTaskViewController.h */,
 				0ED8AC521A1C0D9C007E5286 /* CreateTaskViewController.m */,
 				0ED8AC531A1C0D9C007E5286 /* CreateTaskViewController.xib */,
+				0ED8AC5A1A1C1FB2007E5286 /* EditTaskViewController.h */,
+				0ED8AC5B1A1C1FB2007E5286 /* EditTaskViewController.m */,
 			);
 			path = TodoList;
 			sourceTree = "<group>";
@@ -254,6 +259,7 @@
 				0ED8AC2E1A1BFB7B007E5286 /* SecondViewController.m in Sources */,
 				0ED8AC281A1BFB7B007E5286 /* AppDelegate.m in Sources */,
 				0ED8AC541A1C0D9C007E5286 /* CreateTaskViewController.m in Sources */,
+				0ED8AC5C1A1C1FB2007E5286 /* EditTaskViewController.m in Sources */,
 				0ED8AC2B1A1BFB7B007E5286 /* TasksViewController.m in Sources */,
 				0ED8AC251A1BFB7B007E5286 /* main.m in Sources */,
 			);

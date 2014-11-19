@@ -8,6 +8,7 @@
 
 #import "TasksViewController.h"
 #import "AIRFileHelpers.h"
+#import "EditTaskViewController.h"
 
 @implementation TasksViewController
 
@@ -76,11 +77,14 @@
     UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:cellIdentifier];
     
     if (cell == nil) {
-        cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:cellIdentifier];
+        cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleValue2 reuseIdentifier:cellIdentifier];
     }
+    
+    cell.accessoryType = UITableViewCellAccessoryDetailDisclosureButton;
 
     NSString *task = self.tasks[indexPath.row];
-    cell.textLabel.text = task;
+    cell.textLabel.text = [NSString stringWithFormat:@"Task #%ld", (long)indexPath.row + 1];
+    cell.detailTextLabel.text = task;
     
     return cell;
 }
@@ -91,12 +95,19 @@
     [self.tableView reloadData];
 }
 
+- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
+    NSString *task = self.tasks[indexPath.row];
+    EditTaskViewController *vc = [[EditTaskViewController alloc] initWithTask:task];
+    vc.delegate = self;
+    [self.navigationController pushViewController:vc animated:true];
+}
+
 -(UITableViewCellEditingStyle)tableView:(UITableView *)tableView editingStyleForRowAtIndexPath:(NSIndexPath *)indexPath
 {
     return UITableViewCellEditingStyleDelete;
 }
 
-#pragma mark CreateTaskDelegate
+#pragma mark taskDelegate
 
 - (void)createdTask:(NSString *)task {
     [self.tasks addObject:task];
@@ -104,6 +115,24 @@
     [self.tableView reloadData];
     [self.navigationController popViewControllerAnimated:true];
 }
+
+- (void)editedTask:(NSString *)task fromOldTask:(NSString *)oldTask {
+    NSString *changedTask = nil;
+    
+    for (NSString *task in self.tasks) {
+        if ([task isEqualToString:oldTask]) {
+            changedTask = task;
+            break;
+        }
+    }
+    
+    NSInteger index = [self.tasks indexOfObject:changedTask];
+    [self.tasks replaceObjectAtIndex:index withObject:task];
+    [self.navigationController popViewControllerAnimated:true];
+    [self syncTasks];
+    [self.tableView reloadData];
+}
+
 
 
 @end

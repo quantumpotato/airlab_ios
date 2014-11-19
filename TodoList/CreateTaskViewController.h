@@ -8,9 +8,10 @@
 
 #import <UIKit/UIKit.h>
 
-@protocol CreateTaskDelegate <NSObject>
+@protocol TaskDelegate <NSObject>
 
 - (void)createdTask:(NSString *)task;
+- (void)editedTask:(NSString *)task fromOldTask:(NSString *)oldTask;
 
 @end
 
@@ -18,7 +19,7 @@
 
 @property (strong, nonatomic) IBOutlet UITextField *taskField;
 
-@property (nonatomic, assign) id <CreateTaskDelegate> delegate;
+@property (nonatomic, assign) id <TaskDelegate> delegate;
 
 - (IBAction)saveTapped;
 

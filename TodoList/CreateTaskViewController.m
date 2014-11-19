@@ -18,7 +18,18 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    // Do any additional setup after loading the view from its nib.
+    [self.taskField becomeFirstResponder];
+    
+//    UIView *box = [[UIView alloc] initWithFrame:CGRectMake(100, 200, 70, 30)];
+//    box.backgroundColor = [UIColor blueColor];
+//    box.alpha = .7;
+//    [self.view addSubview:box];
+//    
+//    box.userInteractionEnabled = true;
+//    
+//    UITapGestureRecognizer *tap = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(saveTapped)];
+//    
+//    [box addGestureRecognizer:tap];
 }
 
 - (IBAction)saveTapped {
