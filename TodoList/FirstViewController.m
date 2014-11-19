@@ -17,17 +17,23 @@
     return self;
 }
 
-- (void)viewDidLoad {
-    [super viewDidLoad];
-    self.view.backgroundColor = [UIColor whiteColor];
-    self.title = @"Tasks";
-    self.tasks = [NSMutableArray array];
-    
+- (void)setupNewTaskButton {
     UIBarButtonItem *newTaskButton = [[UIBarButtonItem alloc] initWithTitle:@"+"
                                                                       style:UIBarButtonItemStyleDone target:self
                                                                      action:@selector(newTapped)];
     
     self.navigationItem.rightBarButtonItem = newTaskButton;
+}
+
+- (void)viewDidLoad {
+    [super viewDidLoad];
+    self.view.backgroundColor = [UIColor whiteColor];
+    self.title = @"Tasks";
+    self.tasks = [NSMutableArray array];
+
+    [self setupNewTaskButton];
+    
+    self.tableView.autoresizingMask = UIViewAutoresizingFlexibleWidth | UIViewAutoresizingFlexibleHeight;
 }
 
 - (void)newTapped {
@@ -58,23 +64,23 @@
     return cell;
 }
 
+- (void)tableView:(UITableView *)tableView commitEditingStyle:(UITableViewCellEditingStyle)editingStyle forRowAtIndexPath:(NSIndexPath *)indexPath {
+    [self.tasks removeObjectAtIndex:indexPath.row];
+    [self.tableView reloadData];
+}
+
+-(UITableViewCellEditingStyle)tableView:(UITableView *)tableView editingStyleForRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    return UITableViewCellEditingStyleDelete;
+}
+
 #pragma mark CreateTaskDelegate
 
 - (void)createdTask:(NSString *)task {
     [self.tasks addObject:task];
+    [self.tableView reloadData];
     [self.navigationController popViewControllerAnimated:true];
 }
-
-
-
-
-
-
-
-
-
-
-
 
 
 @end
