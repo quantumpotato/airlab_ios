@@ -6,14 +6,15 @@
 //  Copyright (c) 2014 AirLabs. All rights reserved.
 //
 
-#import "FirstViewController.h"
+#import "TasksViewController.h"
+#import "AIRFileHelpers.h"
 
-@implementation FirstViewController
+@implementation TasksViewController
 
 #pragma mark View Cycle
 
 - (id)init {
-    self = [self initWithNibName:@"FirstViewController" bundle:nil];
+    self = [self initWithNibName:@"TasksViewController" bundle:nil];
     return self;
 }
 
@@ -29,11 +30,31 @@
     [super viewDidLoad];
     self.view.backgroundColor = [UIColor whiteColor];
     self.title = @"Tasks";
-    self.tasks = [NSMutableArray array];
+    [self loadTasks];
 
     [self setupNewTaskButton];
     
     self.tableView.autoresizingMask = UIViewAutoresizingFlexibleWidth | UIViewAutoresizingFlexibleHeight;
+}
+
+#pragma mark Task Loading
+
+- (NSString *)taskPath {
+    return [AIRFileHelpers documentsPathWithPath:@"tasks"];
+}
+
+- (void)syncTasks {
+    [self.tasks writeToFile:[self taskPath] atomically:true];
+}
+
+- (void)loadTasks {
+    NSString *taskPath = [AIRFileHelpers documentsPathWithPath:@"tasks"];
+    
+    if ([AIRFileHelpers fileExistsAtPath:taskPath]) {
+        self.tasks = [NSMutableArray arrayWithArray:[NSArray arrayWithContentsOfFile:[self taskPath]]];
+    } else {
+        self.tasks = [NSMutableArray array];
+    }
 }
 
 - (void)newTapped {
@@ -66,6 +87,7 @@
 
 - (void)tableView:(UITableView *)tableView commitEditingStyle:(UITableViewCellEditingStyle)editingStyle forRowAtIndexPath:(NSIndexPath *)indexPath {
     [self.tasks removeObjectAtIndex:indexPath.row];
+    [self syncTasks];
     [self.tableView reloadData];
 }
 
@@ -78,6 +100,7 @@
 
 - (void)createdTask:(NSString *)task {
     [self.tasks addObject:task];
+    [self syncTasks];
     [self.tableView reloadData];
     [self.navigationController popViewControllerAnimated:true];
 }

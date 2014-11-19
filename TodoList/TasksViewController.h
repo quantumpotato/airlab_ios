@@ -9,7 +9,7 @@
 #import <UIKit/UIKit.h>
 #import "CreateTaskViewController.h"
 
-@interface FirstViewController : UIViewController <UITableViewDelegate, UITableViewDataSource, CreateTaskDelegate>
+@interface TasksViewController : UIViewController <UITableViewDelegate, UITableViewDataSource, CreateTaskDelegate>
 
 @property (strong, nonatomic) IBOutlet UITableView *tableView;
 

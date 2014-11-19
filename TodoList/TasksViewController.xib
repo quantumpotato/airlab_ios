@@ -4,7 +4,7 @@
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6244"/>
     </dependencies>
     <objects>
-        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="FirstViewController">
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="TasksViewController">
             <connections>
                 <outlet property="tableView" destination="AaW-kc-1Rt" id="jP4-GV-Fd5"/>
                 <outlet property="view" destination="iN0-l3-epB" id="KIy-9e-4XD"/>

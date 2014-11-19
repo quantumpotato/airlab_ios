@@ -7,7 +7,7 @@
 //
 
 #import "AppDelegate.h"
-#import "FirstViewController.h"
+#import "TasksViewController.h"
 
 @implementation AppDelegate
 
@@ -16,7 +16,7 @@
 
     self.window = [[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
     
-    FirstViewController *first = [[FirstViewController alloc] init];
+    TasksViewController *first = [[TasksViewController alloc] init];
     
     UINavigationController *nav1 = [[UINavigationController alloc] initWithRootViewController:first];
     
